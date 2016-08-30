@@ -59,11 +59,11 @@ void List::delFirst(){
     
 }
 
-void List::delItemByIndex(){
+void List::delItemByIndex(int index){
     
 }
 
-void List::delItemByValue(){
+void List::delItemByValue(int value){
     
 }
 

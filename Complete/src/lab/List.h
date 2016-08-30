@@ -23,7 +23,7 @@ class List
         int get(int);
         int getSize();
         void delItemByValue(int);
-        void delItemByIndex();
+        void delItemByIndex(int);
         void delFirst();
         void delLast();
 
