@@ -5,15 +5,13 @@
 using namespace lab;
 using namespace std;
 
-List::List()
-{
+List::List(){
     this->size = 0;
     this->first = NULL;
     this->last = NULL;
 }
 
-List::~List()
-{
+List::~List(){
     //Delete all the Nodes
 }
 
@@ -55,4 +53,20 @@ int List::get(int index){
 
 int List::getSize(){
     return this->size;
+}
+
+void List::delFirst(){
+    
+}
+
+void List::delItemByIndex(){
+    
+}
+
+void List::delItemByValue(){
+    
+}
+
+void List::delLast(){
+    
 }
