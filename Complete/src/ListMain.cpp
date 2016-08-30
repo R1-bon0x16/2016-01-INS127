@@ -1,5 +1,5 @@
 #include "ListMain.h"
-#include "List.h"
+#include "lab/List.h"
 #include <iostream>
 
 using namespace std;
