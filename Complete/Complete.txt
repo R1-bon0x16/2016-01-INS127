@@ -1,1 +1,0 @@
-./Debug/src_main.cpp.o ./Debug/src_ListMain.cpp.o ./Debug/src_StackMain.cpp.o ./Debug/src_lab_Node.cpp.o ./Debug/src_lab_List.cpp.o ./Debug/src_lab_TNode.cpp.o ./Debug/src_lab_Stack.cpp.o
