@@ -1,4 +1,8 @@
 InClass/
 Complete/Debug/
+Complete/Complete.txt
 *.workspace
 *.project
+Makefile
+*.mk
+.codelite/
