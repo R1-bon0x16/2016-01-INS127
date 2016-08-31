@@ -50,7 +50,7 @@ LibPath                := $(LibraryPathSwitch).
 AR       := /usr/bin/ar rcu
 CXX      := /usr/bin/g++
 CC       := /usr/bin/gcc
-CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
+CXXFLAGS :=  -g -O0 -std=c++11 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/as
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_ListMain.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_lab_Node.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_lab_List.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_ListMain.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_StackMain.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_lab_Node.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_lab_List.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_lab_TNode.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_lab_Stack.cpp$(ObjectSuffix) 
 
 
 
@@ -107,6 +107,14 @@ $(IntermediateDirectory)/src_ListMain.cpp$(DependSuffix): src/ListMain.cpp
 $(IntermediateDirectory)/src_ListMain.cpp$(PreprocessSuffix): src/ListMain.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_ListMain.cpp$(PreprocessSuffix)src/ListMain.cpp
 
+$(IntermediateDirectory)/src_StackMain.cpp$(ObjectSuffix): src/StackMain.cpp $(IntermediateDirectory)/src_StackMain.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ribonkb/Dropbox/UNAB/INS127-Estructuras de Datos/Programas/UNAB/DataStructures/GitRepo/Complete/src/StackMain.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_StackMain.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_StackMain.cpp$(DependSuffix): src/StackMain.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_StackMain.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_StackMain.cpp$(DependSuffix) -MM src/StackMain.cpp
+
+$(IntermediateDirectory)/src_StackMain.cpp$(PreprocessSuffix): src/StackMain.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_StackMain.cpp$(PreprocessSuffix)src/StackMain.cpp
+
 $(IntermediateDirectory)/src_lab_Node.cpp$(ObjectSuffix): src/lab/Node.cpp $(IntermediateDirectory)/src_lab_Node.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ribonkb/Dropbox/UNAB/INS127-Estructuras de Datos/Programas/UNAB/DataStructures/GitRepo/Complete/src/lab/Node.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_lab_Node.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_lab_Node.cpp$(DependSuffix): src/lab/Node.cpp
@@ -122,6 +130,22 @@ $(IntermediateDirectory)/src_lab_List.cpp$(DependSuffix): src/lab/List.cpp
 
 $(IntermediateDirectory)/src_lab_List.cpp$(PreprocessSuffix): src/lab/List.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_lab_List.cpp$(PreprocessSuffix)src/lab/List.cpp
+
+$(IntermediateDirectory)/src_lab_TNode.cpp$(ObjectSuffix): src/lab/TNode.cpp $(IntermediateDirectory)/src_lab_TNode.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ribonkb/Dropbox/UNAB/INS127-Estructuras de Datos/Programas/UNAB/DataStructures/GitRepo/Complete/src/lab/TNode.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_lab_TNode.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_lab_TNode.cpp$(DependSuffix): src/lab/TNode.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_lab_TNode.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_lab_TNode.cpp$(DependSuffix) -MM src/lab/TNode.cpp
+
+$(IntermediateDirectory)/src_lab_TNode.cpp$(PreprocessSuffix): src/lab/TNode.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_lab_TNode.cpp$(PreprocessSuffix)src/lab/TNode.cpp
+
+$(IntermediateDirectory)/src_lab_Stack.cpp$(ObjectSuffix): src/lab/Stack.cpp $(IntermediateDirectory)/src_lab_Stack.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ribonkb/Dropbox/UNAB/INS127-Estructuras de Datos/Programas/UNAB/DataStructures/GitRepo/Complete/src/lab/Stack.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_lab_Stack.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_lab_Stack.cpp$(DependSuffix): src/lab/Stack.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_lab_Stack.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_lab_Stack.cpp$(DependSuffix) -MM src/lab/Stack.cpp
+
+$(IntermediateDirectory)/src_lab_Stack.cpp$(PreprocessSuffix): src/lab/Stack.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_lab_Stack.cpp$(PreprocessSuffix)src/lab/Stack.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
